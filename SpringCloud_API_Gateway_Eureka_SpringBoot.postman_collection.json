@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "241804bf-5218-40da-9012-606c6b4c8f41",
+		"name": "SpringCloud_API_Gateway_Eureka_SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/clientOne/ControllerOne/EndpointOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientOne/ControllerOne/EndpointOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientOne",
+						"ControllerOne",
+						"EndpointOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientOne/ControllerOne/EndpointTwo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientOne/ControllerOne/EndpointTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientOne",
+						"ControllerOne",
+						"EndpointTwo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientOne/ControllerTwo/EndpointOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientOne/ControllerTwo/EndpointOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientOne",
+						"ControllerTwo",
+						"EndpointOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientOne/ControllerTwo/EndpointTwo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientOne/ControllerTwo/EndpointTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientOne",
+						"ControllerTwo",
+						"EndpointTwo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientTwo/ControllerOne/EndpointOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientTwo/ControllerOne/EndpointOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientTwo",
+						"ControllerOne",
+						"EndpointOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientTwo/ControllerOne/EndpointTwo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientTwo/ControllerOne/EndpointTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientTwo",
+						"ControllerOne",
+						"EndpointTwo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientTwo/ControllerTwo/EndpointOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientTwo/ControllerTwo/EndpointOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientTwo",
+						"ControllerTwo",
+						"EndpointOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/clientTwo/ControllerTwo/EndpointTwo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientTwo/ControllerTwo/EndpointTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientTwo",
+						"ControllerTwo",
+						"EndpointTwo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

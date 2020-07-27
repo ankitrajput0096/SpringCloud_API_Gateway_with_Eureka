@@ -1,0 +1,51 @@
+version: "3"
+services:
+  eurekaadminserverone:
+    build:
+      context: ./Eureka_Admin_Server
+    command: java -jar -Dspring.profiles.active=eureka-server-1 admin-0.0.1-SNAPSHOT.jar
+    ports:
+      - "9001:9001"
+
+  eurekaadminservertwo:
+    build:
+      context: ./Eureka_Admin_Server
+    command: java -jar -Dspring.profiles.active=eureka-server-2 admin-0.0.1-SNAPSHOT.jar
+    ports:
+      - "9002:9002"
+
+  eurekaadminserverthree:
+    build:
+      context: ./Eureka_Admin_Server
+    command: java -jar -Dspring.profiles.active=eureka-server-3 admin-0.0.1-SNAPSHOT.jar
+    ports:
+      - "9003:9003"
+
+  clientone:
+    build:
+      context: ./ClientOne
+    ports:
+      - "8080-8085:8040"
+    depends_on:
+      - eurekaadminserverone
+      - eurekaadminservertwo
+      - eurekaadminserverthree
+
+  clienttwo:
+    build:
+      context: ./ClientTwo
+    ports:
+      - "8086-8090:8050"
+    depends_on:
+      - eurekaadminserverone
+      - eurekaadminservertwo
+      - eurekaadminserverthree
+
+  springcloudapigateway:
+    build:
+      context: ./API_Gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - clientone
+      - clienttwo

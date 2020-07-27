@@ -1,0 +1,56 @@
+---
+spring:
+  profiles: eureka-server-1
+  application:
+    name: eureka-server-clustered
+server:
+  port: 9001
+eureka:
+  server:
+    enableSelfPreservation: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaadminservertwo:9002/eureka/,http://eurekaadminserverthree:9003/eureka/
+
+---
+spring:
+  profiles: eureka-server-2
+  application:
+    name: eureka-server-clustered
+server:
+  port: 9002
+eureka:
+  server:
+    enableSelfPreservation: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaadminserverone:9001/eureka/,http://eurekaadminserverthree:9003/eureka/
+
+---
+spring:
+  profiles: eureka-server-3
+  application:
+    name: eureka-server-clustered
+server:
+  port: 9003
+eureka:
+  server:
+    enableSelfPreservation: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaadminserverone:9001/eureka/,http://eurekaadminservertwo:9002/eureka/
