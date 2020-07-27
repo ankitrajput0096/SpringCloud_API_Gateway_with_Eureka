@@ -1,4 +1,4 @@
-# Server Side Load Balancing and Routing using Spring Cloud API Gateway and Eureka Spring boot application 
+# Server Side Load Balancing and Routing using Spring Cloud API Gateway and Eureka
 
 Dockerized Spring Boot application for Server side load balancing and routing using Spring Cloud API Gateway and Eureka.
 
