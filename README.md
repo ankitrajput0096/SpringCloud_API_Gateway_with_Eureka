@@ -62,7 +62,10 @@ Your Spring Cloud API Gateway server should be now running on http://localhost:8
 2. Import Postman collection from the `SpringCloud_API_Gateway_Eureka_SpringBoot.postman_collection.json` file
 3. Enjoy !!
 
-### NOTE : To see server side load balancing observe terminal logs of `docker-compose`. When trying to hit same endpoint multiple times parallely. 
+#### NOTE : To see server side load balancing observe terminal logs of `docker-compose`. When trying to hit same endpoint multiple times parallely. 
+
+## Architecture design of Spring Cloud API Gateway
+![](images/spring_cloud_architecture.png)
 
 ## Built With
 

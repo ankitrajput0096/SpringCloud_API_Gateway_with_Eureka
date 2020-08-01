@@ -3,6 +3,7 @@ package com.springservice.clientTwo.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,10 +23,10 @@ public class simpleControllerOne {
     private Environment env;
 
     @RequestMapping(value="/EndpointOne", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> controllerClientOneEndpointOne() {
+    public ResponseEntity<String> controllerClientOneEndpointOne(@RequestHeader("sso-token") String token) {
 
         logger.info("This is client two, controller one and endpoint one");
-
+        logger.info("Now processing sso token passed by api gateway"+token);
         //Add a small delay in response
         utils.addDelay(3);
 
@@ -35,10 +36,10 @@ public class simpleControllerOne {
     }
 
     @RequestMapping(value="/EndpointTwo", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> controllerClientOneEndpointTwo() {
+    public ResponseEntity<String> controllerClientOneEndpointTwo(@RequestHeader("sso-token") String token) {
 
         logger.info("This is client two, controller one and endpoint two");
-
+        logger.info("Now processing sso token passed by api gateway"+token);
         //Add a small delay in response
         utils.addDelay(3);
 

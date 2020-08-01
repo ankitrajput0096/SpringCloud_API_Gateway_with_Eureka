@@ -13,13 +13,18 @@ public class SpringCloudConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/clientOne/**")
+                        .filters(f -> f.addRequestHeader("sso-token", "I-am-ssotoken")              //Pre filter
+                                .addResponseHeader("leaving-header", "I-am-header-for-response"))   //Post filter
                         .uri("lb://CLIENTONE")       // here, lb => is for load balanced
                         .id("clientOne"))
 
                 .route(r -> r.path("/clientTwo/**")
+                        .filters(f -> f.addRequestHeader("sso-token", "I-am-ssotoken")              //Pre filter
+                                .addResponseHeader("leaving-header", "I-am-header-for-response"))   //Post filter
                         .uri("lb://CLIENTTWO")       // here, lb => is for load balanced
                         .id("clientTwo"))
                 .build();
+        //NOTE: Can create custom Pre, Post and Global filters if major changes are required at API gateway level.
     }
 
 }
