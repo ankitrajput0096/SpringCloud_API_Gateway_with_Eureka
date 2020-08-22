@@ -9,10 +9,12 @@ public class SpringCloudFallBackContoller {
 
     @RequestMapping("/clientOnefallback")
     public Mono<String> clientOneFallBack() {
-        return Mono.just("Client One API is taking too long to respond or is down. Please try again later");
+        return Mono.just("Client One API is taking too " +
+                "long to respond or is down. Please try again later");
     }
     @RequestMapping("/clientTwofallback")
     public Mono<String> clientTwoFallBack() {
-        return Mono.just("Client Two API is taking too long to respond or is down. Please try again later");
+        return Mono.just("Client Two API is taking too " +
+                "long to respond or is down. Please try again later");
     }
 }

@@ -16,25 +16,32 @@ public class SpringCloudConfig {
         return builder.routes()
                 .route(p -> p.path("/clientOne/**")
                         .filters(f ->
-                                f.addRequestHeader("sso-token", "I-am-ssotoken")                          //Pre filter
-                                        .addRequestHeader("leaving-header", "I-am-header-for-response")   //Post filter
+                                f.addRequestHeader("sso-token", "I-am-ssotoken")
+                                        //Pre filter
+                                        .addRequestHeader("leaving-header", "I-am-header-for-response")
+                                        //Post filter
                                         .hystrix(config -> config.setName("client-one-service")
                                                 .setFallbackUri("forward:/clientOnefallback"))
                         )
-                        .uri("lb://CLIENTONE")                                      // here, lb => is for load balanced
+                        .uri("lb://CLIENTONE")
+                        // here, lb => is for load balanced
                         .id("clientOne")
                 )
                 .route(p -> p.path("/clientTwo/**")
                         .filters(f ->
-                                f.addRequestHeader("sso-token", "I-am-ssotoken")                         //Pre filter
-                                        .addRequestHeader("leaving-header", "I-am-header-for-response")  //Post filter
+                                f.addRequestHeader("sso-token", "I-am-ssotoken")
+                                        //Pre filter
+                                        .addRequestHeader("leaving-header", "I-am-header-for-response")
+                                        //Post filter
                                         .hystrix(config -> config.setName("client-two-service")
                                                 .setFallbackUri("forward:/clientTwofallback"))
                         )
-                        .uri("lb://CLIENTTWO")                               // here, lb => is for load balanced
+                        .uri("lb://CLIENTTWO")
+                        // here, lb => is for load balanced
                         .id("clientTwo")
                 )
                 .build();
-        //NOTE: Can create custom Pre, Post and Global filters if major changes are required at API gateway level.
+        //NOTE: Can create custom Pre, Post and Global filters if
+        // major changes are required at API gateway level.
     }
 }

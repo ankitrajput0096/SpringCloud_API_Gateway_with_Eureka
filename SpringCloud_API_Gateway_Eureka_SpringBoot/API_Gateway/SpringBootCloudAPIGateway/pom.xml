@@ -38,7 +38,7 @@
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
 
-		<!-- This dependency is for enabling health endpoints for this service -->
+		<!-- This dependency is for enabling health endpoints for service -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
